@@ -1,0 +1,34 @@
+
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
+
+group = 'com.github.mwacha3'
+version = '1.0.0'
+
+android {
+    namespace 'nxtech.dev.library.listsort'
+    compileSdk 35
+
+    defaultConfig {
+        minSdk 21
+    }
+
+    publishing {
+        singleVariant('release')
+    }
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.mwacha3'
+                artifactId = 'ListSort'
+                version = '1.0.0'
+            }
+        }
+    }
+}
