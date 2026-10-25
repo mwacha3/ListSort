@@ -1,5 +1,5 @@
 
-name: Generate Gradle Wrapper
+name: Generate Gradle Wrappers
 
 on:
   workflow_dispatch:
