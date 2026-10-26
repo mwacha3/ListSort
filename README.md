@@ -1,21 +1,24 @@
-#NxTECH ListSort
+# NxTECH ListSort
 
-A lightweight Android Java library for sorting "ArrayList<HashMap<String, Object>>" collections by string or numeric values.
+**NxTECH ListSort** is a lightweight Android Java library that makes sorting `ArrayList<HashMap<String, Object>>` collections simple and convenient.
 
-Features
+Sort your data by string or numeric values in ascending or descending order with just one method call.
 
-- Sort by string values (A–Z or Z–A).
-- Sort by numeric values (ascending or descending).
-- Works with Java "ArrayList<HashMap<String, Object>>".
-- Simple API with no additional setup beyond adding the dependency.
-- Compatible with Android projects using Java.
+### ✨ Features
 
-Installation
+- Sort strings alphabetically (**A–Z** or **Z–A**)
+- Sort numbers in ascending or descending order
+- Supports `ArrayList<HashMap<String, Object>>`
+- Simple and easy-to-use Java methods
+- Designed for Android applications
 
-1. Add the JitPack repository
+### 📦 Installation
 
-In your project's "settings.gradle" file, add JitPack under "dependencyResolutionManagement":
+**Step 1: Add JitPack**
 
+In your project's `settings.gradle`, add JitPack to your repositories:
+
+```gradle
 dependencyResolutionManagement {
     repositories {
         google()
@@ -23,29 +26,33 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
+```
 
-Keep any other repositories already required by your project.
+**Step 2: Add the dependency**
 
-2. Add the dependency
+In your app-level `build.gradle`, add:
 
-In your app-level "build.gradle" file, add:
-
+```gradle
 dependencies {
     implementation 'com.github.mwacha3:ListSort:1.0.0'
 }
+```
 
 Sync your project with Gradle.
 
-Import
+### 🚀 Getting Started
 
+**Import the library**
+
+```java
 import nxtech.dev.library.listsort.CollectionsClass;
 import java.util.ArrayList;
 import java.util.HashMap;
+```
 
-Usage
+**Create sample data**
 
-Create a list containing "HashMap" items:
-
+```java
 ArrayList<HashMap<String, Object>> listmap =
         new ArrayList<HashMap<String, Object>>();
 
@@ -65,68 +72,93 @@ item3.put("age", 25);
 listmap.add(item3);
 
 CollectionsClass sorter = new CollectionsClass();
+```
 
-Sort strings: A–Z
+### 🔤 Sort by String
 
+Sort names alphabetically from A to Z:
+
+```java
 sorter.setSortByString(listmap, "name", false);
+```
 
-Expected order:
+**Output:**
 
+```text
 Alice
 Bob
 Charlie
+```
 
-Sort strings: Z–A
+Sort names from Z to A:
 
+```java
 sorter.setSortByString(listmap, "name", true);
+```
 
-Sort numbers: lowest to highest
+### 🔢 Sort by Number
 
+Sort ages from lowest to highest:
+
+```java
 sorter.setSortByNumber(listmap, "age", false);
+```
 
-Expected order:
+**Output:**
 
+```text
 20
 25
 30
+```
 
-Sort numbers: highest to lowest
+Sort ages from highest to lowest:
 
+```java
 sorter.setSortByNumber(listmap, "age", true);
+```
 
-Expected order:
+**Output:**
 
+```text
 30
 25
 20
+```
 
-Available methods
+### 📚 Available Methods
 
-Method| Description
-"setSortByString(listmap, key, isDesc)"| Sorts items by a string field.
-"setSortByNumber(listmap, key, isDesc)"| Sorts items by a numeric field.
+| Method | Description |
+|---|---|
+| `setSortByString(listmap, key, isDesc)` | Sorts items by string values |
+| `setSortByNumber(listmap, key, isDesc)` | Sorts items by numeric values |
 
-The "isDesc" parameter controls the sort direction:
+### Sort Direction
 
-- "false" — ascending order.
-- "true" — descending order.
+| Parameter | Behavior |
+|---|---|
+| `false` | Ascending order |
+| `true` | Descending order |
 
-Both methods sort the supplied list directly, changing its order.
+Both methods modify the original list.
 
-Requirements
+### ⚙️ Requirements
 
-- Android project using Gradle.
-- Java.
-- JitPack repository configured in the project.
+- Android project using Gradle
+- Java
+- JitPack repository configured
 
-Repository
+### 🔗 Links
 
-"GitHub — NxTECH ListSort" (https://github.com/mwacha3/ListSort)
+- [GitHub Repository](https://github.com/mwacha3/ListSort)
+- [JitPack](https://jitpack.io/#mwacha3/ListSort)
 
-Author
+### 👨‍💻 Developed By
 
-NxTECH IT Solutions
+**NxTECH IT Solutions**
 
-License
+*Simple tools for better Android development.*
 
-Check the repository's "LICENSE" file for the applicable license terms.
+### 📄 License
+
+See the repository's `LICENSE` file for the applicable license terms.
